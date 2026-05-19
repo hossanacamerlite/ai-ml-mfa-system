@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>OTP Verification</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="box">
+        <h2>OTP Verification</h2>
+        <p>Risk level: <strong>{{ risk_level }}</strong></p>
+
+        {% if error %}
+            <p class="error">{{ error }}</p>
+        {% endif %}
+
+        <form method="POST">
+            <label>Enter OTP</label>
+            <input type="text" name="otp" required>
+            <button type="submit">Verify OTP</button>
+        </form>
+    </div>
+</body>
+</html>

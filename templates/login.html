@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Secure Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="box">
+        <h2>AI/ML-Enhanced MFA Login</h2>
+        <p class="subtitle">
+            Secure intelligent authentication system
+        </p>
+
+        {% if error %}
+            <p class="error">{{ error }}</p>
+        {% endif %}
+
+        <form method="POST">
+            <label>Username</label>
+            <input type="text" name="username" required>
+
+            <label>Password</label>
+            <input type="password" name="password" required>
+
+            <label>Device ID</label>
+            <input type="text" name="device_id" placeholder="e.g. laptop-01" required>
+
+            <button type="submit">Login</button>
+
+            <p class="footer">
+                Developed by CodeByte
+            </p>
+            </p>
+        </form>
+    </div>
+</body>
+</html>

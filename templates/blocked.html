@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Blocked</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="box">
+
+        <h2>Access Temporarily Blocked</h2>
+
+        <p>Your login was identified as suspicious.</p>
+
+        <p>
+            Please try again after
+            <strong id="countdown">{{ remaining }}</strong>
+            seconds.
+        </p>
+
+        <br>
+
+        <a href="/">
+            <button>Back to Login</button>
+        </a>
+
+    </div>
+
+    <script>
+        let seconds = Number("{{ remaining }}");
+        const countdownElement = document.getElementById("countdown");
+        const timer = setInterval(() => {
+
+            seconds--;
+
+            countdownElement.textContent = seconds;
+
+            if (seconds <= 0) {
+
+                clearInterval(timer);
+
+                window.location.href = "/";
+
+            }
+
+        }, 1000);
+
+    </script>
+
+</body>
+
+</html>

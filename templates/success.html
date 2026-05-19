@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Success</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="box">
+
+        <h2>Login Successful</h2>
+
+        <p>Welcome, <strong>{{ username }}</strong>.</p>
+
+        <p>Authenticated with MFA.</p>
+
+        <p>Risk level during login: <strong>{{ risk_level }}</strong></p>
+
+        <br>
+
+        <a href="/">
+            <button>Back to Login</button>
+        </a>
+
+    </div>
+
+</body>
+</html>
