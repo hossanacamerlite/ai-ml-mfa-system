@@ -1,6 +1,7 @@
 {
   "student1": {
     "password": "scrypt:32768:8:1$h0m5c2uP99gJdHzR$ecee5569862fbfe5a85f65c333cfe1986aea1a655e049d0dcb19884e5762c596b9a0d4e6c7710ed768921af5e4f3b6de2f5ce5d5f407685de24aedfc8222670a",
+    "password_comment": " password is Secure123!",
     "email": "student1@example.com",
     "known_device": "laptop-01"
   },
