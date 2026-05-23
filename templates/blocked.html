@@ -22,15 +22,24 @@
 
         <br>
 
-        <a href="/">
-            <button>Back to Login</button>
-        </a>
+        <!-- Hidden Button -->
+        <div id="loginContainer" style="display: none;">
+
+            <a href="/">
+                <button>Back to Login</button>
+            </a>
+
+        </div>
 
     </div>
 
     <script>
+
         let seconds = Number("{{ remaining }}");
+
         const countdownElement = document.getElementById("countdown");
+        const loginContainer = document.getElementById("loginContainer");
+
         const timer = setInterval(() => {
 
             seconds--;
@@ -41,7 +50,10 @@
 
                 clearInterval(timer);
 
-                window.location.href = "/";
+                countdownElement.textContent = 0;
+
+                // Show button after timer ends
+                loginContainer.style.display = "block";
 
             }
 
