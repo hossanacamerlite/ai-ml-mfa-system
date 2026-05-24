@@ -23,29 +23,43 @@
         <br>
 
         <a href="/">
-            <button>Back to Login</button>
+            <button id="backBtn" disabled onclick="goLogin()">
+            Back to Login
+            </button>
         </a>
 
     </div>
-
+       
     <script>
-        let seconds = Number("{{ remaining }}");
-        const countdownElement = document.getElementById("countdown");
-        const timer = setInterval(() => {
+    // Prevent browser back button
+    history.pushState(null, null, location.href);
 
-            seconds--;
+    window.onpopstate = function () {
+        history.go(1);
+    };
 
-            countdownElement.textContent = seconds;
+    // Countdown timer
+    let seconds = {{ remaining }};
 
-            if (seconds <= 0) {
+    const button = document.getElementById("backBtn");
 
-                clearInterval(timer);
+    const countdown = setInterval(() => {
+        seconds--;
 
-                window.location.href = "/";
+        if (seconds <= 0) {
+            clearInterval(countdown);
 
-            }
+            // Enable button after timer ends
+            button.disabled = false;
+            button.innerText = "Back to Login";
+        } else {
+            button.innerText = `Wait ${seconds}s`;
+        }
+    }, 1000);
 
-        }, 1000);
+    function goLogin() {
+        window.location.href = "/";
+    }
 
     </script>
 
