@@ -1,6 +1,6 @@
 # AI/ML-Enhanced Multi-Factor Authentication System
 
-A secure Flask-based authentication system developed to mitigate password guessing attacks using multi-factor authentication (MFA), suspicious login detection, and rule-based risk scoring.
+iA secure Flask-based authentication system developed to mitigate password guessing attacks using multi-factor authentication (MFA), suspicious login detection, and rule-based risk scoring.
 
 ## Features
 
