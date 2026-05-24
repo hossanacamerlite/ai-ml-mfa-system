@@ -1,9 +1,22 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Secure Login</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
+<script>
+function togglePassword() {
+    var passwordField = document.getElementById("password");
+
+    if (passwordField.type === "password") {
+        passwordField.type = "text";
+    } else {
+        passwordField.type = "password";
+    }
+}
+</script>
 <body>
     <div class="box">
         <h2>AI/ML-Enhanced MFA Login</h2>
@@ -16,21 +29,21 @@
         {% endif %}
 
         <form method="POST">
-            <label>Username</label>
-            <input type="text" name="username" required>
+            <label for="username">Username</label>
+            <input id="username" type="text" name="username" placeholder="Enter your username" title="Username" required>
 
-            <label>Password</label>
-            <input type="password" name="password" required>
-
-            <label>Device ID</label>
-            <input type="text" name="device_id" placeholder="e.g. laptop-01" required>
+            <label for="password">Password</label>
+            <input id="password" type="password" name="password" placeholder="Enter your password" title="Password" required>
+            <div class="show-password">
+                <input type="checkbox" id="showPass" onclick="togglePassword()">
+                <span for="showPass">Show Password</span>
+            </div>
+            <label for="device_id">Device ID</label>
+            <input id="device_id" type="text" name="device_id" placeholder="e.g. laptop-01" title="Device ID" required>
 
             <button type="submit">Login</button>
 
-            <p class="footer">
-                Developed by CodeByte
-            </p>
-            </p>
+            <p class="footer">Developed by CodeByte</p>
         </form>
     </div>
 </body>

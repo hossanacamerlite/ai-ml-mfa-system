@@ -119,6 +119,21 @@ button:hover {
     color: rgba(255,255,255,0.8);
 }
 
+.show-password {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    color: white;
+    font-size: 14px;
+}
+
+.show-password input[type="checkbox"] {
+    width: auto;
+    margin: 0;
+}
+
 .footer{
     margin-top: 20px;
     text-align: center;
